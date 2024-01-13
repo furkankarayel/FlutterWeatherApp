@@ -1,6 +1,6 @@
 import 'package:flutter_weatherapp/backend/services/backend.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:flutter_weatherapp/pages/wetter/weather_model.dart';
+import 'package:flutter_weatherapp/pages/weather/weather_model.dart';
 
 abstract class WeatherController extends StateNotifier<WeatherModel> {
   WeatherController(WeatherModel state) : super(state);
@@ -15,9 +15,11 @@ class WeatherControllerImpl extends WeatherController {
     WeatherModel? model,
   })  : _backendService = backendService,
         super(WeatherModel(
-          stadt: 'Berlin',
-          temperatur: 0.0,
-          wetterbedingungen: '',
+          cityName: 'Berlin',
+          currentTemp: 0.0,
+          minTemp: -2.2,
+          maxTemp: 2.2,
+          condition: '',
           isLoading: true,
           hasError: false,
         )) {
@@ -33,9 +35,11 @@ class WeatherControllerImpl extends WeatherController {
       final data = response;
 
       state = WeatherModel(
-          stadt: data['name'],
-          temperatur: data['main']['temp'].toDouble(),
-          wetterbedingungen: data['weather'][0]['description'],
+          cityName: data['name'],
+          currentTemp: data['main']['temp'].toDouble(),
+          minTemp: data['main']['temp_min'].toDouble(),
+          maxTemp: data['main']['temp_max'].toDouble(),
+          condition: data['weather'][0]['description'],
           isLoading: false,
           hasError: false);
     } catch (e) {

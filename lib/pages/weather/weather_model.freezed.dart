@@ -20,9 +20,11 @@ WeatherModel _$WeatherModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WeatherModel {
-  String get stadt => throw _privateConstructorUsedError;
-  double get temperatur => throw _privateConstructorUsedError;
-  String get wetterbedingungen => throw _privateConstructorUsedError;
+  String get cityName => throw _privateConstructorUsedError;
+  double get currentTemp => throw _privateConstructorUsedError;
+  double get minTemp => throw _privateConstructorUsedError;
+  double get maxTemp => throw _privateConstructorUsedError;
+  String get condition => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
 
@@ -39,9 +41,11 @@ abstract class $WeatherModelCopyWith<$Res> {
       _$WeatherModelCopyWithImpl<$Res, WeatherModel>;
   @useResult
   $Res call(
-      {String stadt,
-      double temperatur,
-      String wetterbedingungen,
+      {String cityName,
+      double currentTemp,
+      double minTemp,
+      double maxTemp,
+      String condition,
       bool isLoading,
       bool hasError});
 }
@@ -59,24 +63,34 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stadt = null,
-    Object? temperatur = null,
-    Object? wetterbedingungen = null,
+    Object? cityName = null,
+    Object? currentTemp = null,
+    Object? minTemp = null,
+    Object? maxTemp = null,
+    Object? condition = null,
     Object? isLoading = null,
     Object? hasError = null,
   }) {
     return _then(_value.copyWith(
-      stadt: null == stadt
-          ? _value.stadt
-          : stadt // ignore: cast_nullable_to_non_nullable
+      cityName: null == cityName
+          ? _value.cityName
+          : cityName // ignore: cast_nullable_to_non_nullable
               as String,
-      temperatur: null == temperatur
-          ? _value.temperatur
-          : temperatur // ignore: cast_nullable_to_non_nullable
+      currentTemp: null == currentTemp
+          ? _value.currentTemp
+          : currentTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      wetterbedingungen: null == wetterbedingungen
-          ? _value.wetterbedingungen
-          : wetterbedingungen // ignore: cast_nullable_to_non_nullable
+      minTemp: null == minTemp
+          ? _value.minTemp
+          : minTemp // ignore: cast_nullable_to_non_nullable
+              as double,
+      maxTemp: null == maxTemp
+          ? _value.maxTemp
+          : maxTemp // ignore: cast_nullable_to_non_nullable
+              as double,
+      condition: null == condition
+          ? _value.condition
+          : condition // ignore: cast_nullable_to_non_nullable
               as String,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -99,9 +113,11 @@ abstract class _$$WeatherModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String stadt,
-      double temperatur,
-      String wetterbedingungen,
+      {String cityName,
+      double currentTemp,
+      double minTemp,
+      double maxTemp,
+      String condition,
       bool isLoading,
       bool hasError});
 }
@@ -117,24 +133,34 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stadt = null,
-    Object? temperatur = null,
-    Object? wetterbedingungen = null,
+    Object? cityName = null,
+    Object? currentTemp = null,
+    Object? minTemp = null,
+    Object? maxTemp = null,
+    Object? condition = null,
     Object? isLoading = null,
     Object? hasError = null,
   }) {
     return _then(_$WeatherModelImpl(
-      stadt: null == stadt
-          ? _value.stadt
-          : stadt // ignore: cast_nullable_to_non_nullable
+      cityName: null == cityName
+          ? _value.cityName
+          : cityName // ignore: cast_nullable_to_non_nullable
               as String,
-      temperatur: null == temperatur
-          ? _value.temperatur
-          : temperatur // ignore: cast_nullable_to_non_nullable
+      currentTemp: null == currentTemp
+          ? _value.currentTemp
+          : currentTemp // ignore: cast_nullable_to_non_nullable
               as double,
-      wetterbedingungen: null == wetterbedingungen
-          ? _value.wetterbedingungen
-          : wetterbedingungen // ignore: cast_nullable_to_non_nullable
+      minTemp: null == minTemp
+          ? _value.minTemp
+          : minTemp // ignore: cast_nullable_to_non_nullable
+              as double,
+      maxTemp: null == maxTemp
+          ? _value.maxTemp
+          : maxTemp // ignore: cast_nullable_to_non_nullable
+              as double,
+      condition: null == condition
+          ? _value.condition
+          : condition // ignore: cast_nullable_to_non_nullable
               as String,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -152,9 +178,11 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$WeatherModelImpl implements _WeatherModel {
   _$WeatherModelImpl(
-      {required this.stadt,
-      required this.temperatur,
-      required this.wetterbedingungen,
+      {required this.cityName,
+      required this.currentTemp,
+      required this.minTemp,
+      required this.maxTemp,
+      required this.condition,
       required this.isLoading,
       required this.hasError});
 
@@ -162,11 +190,15 @@ class _$WeatherModelImpl implements _WeatherModel {
       _$$WeatherModelImplFromJson(json);
 
   @override
-  final String stadt;
+  final String cityName;
   @override
-  final double temperatur;
+  final double currentTemp;
   @override
-  final String wetterbedingungen;
+  final double minTemp;
+  @override
+  final double maxTemp;
+  @override
+  final String condition;
   @override
   final bool isLoading;
   @override
@@ -174,7 +206,7 @@ class _$WeatherModelImpl implements _WeatherModel {
 
   @override
   String toString() {
-    return 'WeatherModel(stadt: $stadt, temperatur: $temperatur, wetterbedingungen: $wetterbedingungen, isLoading: $isLoading, hasError: $hasError)';
+    return 'WeatherModel(cityName: $cityName, currentTemp: $currentTemp, minTemp: $minTemp, maxTemp: $maxTemp, condition: $condition, isLoading: $isLoading, hasError: $hasError)';
   }
 
   @override
@@ -182,11 +214,14 @@ class _$WeatherModelImpl implements _WeatherModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherModelImpl &&
-            (identical(other.stadt, stadt) || other.stadt == stadt) &&
-            (identical(other.temperatur, temperatur) ||
-                other.temperatur == temperatur) &&
-            (identical(other.wetterbedingungen, wetterbedingungen) ||
-                other.wetterbedingungen == wetterbedingungen) &&
+            (identical(other.cityName, cityName) ||
+                other.cityName == cityName) &&
+            (identical(other.currentTemp, currentTemp) ||
+                other.currentTemp == currentTemp) &&
+            (identical(other.minTemp, minTemp) || other.minTemp == minTemp) &&
+            (identical(other.maxTemp, maxTemp) || other.maxTemp == maxTemp) &&
+            (identical(other.condition, condition) ||
+                other.condition == condition) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
@@ -195,8 +230,8 @@ class _$WeatherModelImpl implements _WeatherModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, stadt, temperatur, wetterbedingungen, isLoading, hasError);
+  int get hashCode => Object.hash(runtimeType, cityName, currentTemp, minTemp,
+      maxTemp, condition, isLoading, hasError);
 
   @JsonKey(ignore: true)
   @override
@@ -214,9 +249,11 @@ class _$WeatherModelImpl implements _WeatherModel {
 
 abstract class _WeatherModel implements WeatherModel {
   factory _WeatherModel(
-      {required final String stadt,
-      required final double temperatur,
-      required final String wetterbedingungen,
+      {required final String cityName,
+      required final double currentTemp,
+      required final double minTemp,
+      required final double maxTemp,
+      required final String condition,
       required final bool isLoading,
       required final bool hasError}) = _$WeatherModelImpl;
 
@@ -224,11 +261,15 @@ abstract class _WeatherModel implements WeatherModel {
       _$WeatherModelImpl.fromJson;
 
   @override
-  String get stadt;
+  String get cityName;
   @override
-  double get temperatur;
+  double get currentTemp;
   @override
-  String get wetterbedingungen;
+  double get minTemp;
+  @override
+  double get maxTemp;
+  @override
+  String get condition;
   @override
   bool get isLoading;
   @override

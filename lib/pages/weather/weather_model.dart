@@ -6,9 +6,11 @@ part 'weather_model.g.dart';
 @freezed
 abstract class WeatherModel with _$WeatherModel {
   factory WeatherModel({
-    required String stadt,
-    required double temperatur,
-    required String wetterbedingungen,
+    required String cityName,
+    required double currentTemp,
+    required double minTemp,
+    required double maxTemp,
+    required String condition,
     required bool isLoading,
     required bool hasError,
   }) = _WeatherModel;
