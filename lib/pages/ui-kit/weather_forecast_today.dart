@@ -16,12 +16,14 @@ class WeatherForecastToday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String iconCode = data.iconCode;
+
     return Padding(
       padding: EdgeInsets.all(size.width * 0.025),
       child: Column(
         children: [
           Text(
-            time,
+            data.time,
             style: GoogleFonts.questrial(
               color: isDarkMode ? Colors.white : Colors.black,
               fontSize: size.height * 0.02,
@@ -33,16 +35,14 @@ class WeatherForecastToday extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   vertical: size.height * 0.005,
                 ),
-                child: FaIcon(
-                  weatherIcon,
-                  color: isDarkMode ? Colors.white : Colors.black,
-                  size: size.height * 0.03,
+                child: Image.network(
+                  data.iconCode,
                 ),
-              ),
+              )
             ],
           ),
           Text(
-            '$temp˚C',
+            '${data.currentTemp}˚C',
             style: GoogleFonts.questrial(
               color: isDarkMode ? Colors.white : Colors.black,
               fontSize: size.height * 0.025,
@@ -63,7 +63,7 @@ class WeatherForecastToday extends StatelessWidget {
             ],
           ),
           Text(
-            '$wind km/h',
+            '${data.wind} km/h',
             style: GoogleFonts.questrial(
               color: Colors.grey,
               fontSize: size.height * 0.02,
@@ -84,7 +84,7 @@ class WeatherForecastToday extends StatelessWidget {
             ],
           ),
           Text(
-            '$rainChance %',
+            '${data.rainprobability} %',
             style: GoogleFonts.questrial(
               color: Colors.blue,
               fontSize: size.height * 0.02,

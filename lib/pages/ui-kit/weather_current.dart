@@ -16,180 +16,133 @@ class WeatherCurrent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-            height: size.height,
-            width: size.height,
-            decoration: BoxDecoration(
-              color: isDarkMode ? Colors.black : Colors.white,
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+        padding: EdgeInsets.only(
+          top: size.height * 0.03,
+        ),
+        child: Align(
+          child: Text(
+            data.cityName,
+            style: GoogleFonts.questrial(
+              color: isDarkMode ? Colors.white : Colors.black,
+              fontSize: size.height * 0.06,
+              fontWeight: FontWeight.bold,
             ),
-            child: SafeArea(
-                child: Stack(children: [
-              SingleChildScrollView(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: size.height * 0.01,
-                        horizontal: size.width * 0.05,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.bars,
-                            color: isDarkMode ? Colors.white : Colors.black,
-                          ),
-                          Align(
-                            child: Text(
-                              'Weather App', //TODO: change app name
-                              style: GoogleFonts.questrial(
-                                color: isDarkMode
-                                    ? Colors.white
-                                    : const Color(0xff1D1617),
-                                fontSize: size.height * 0.02,
-                              ),
-                            ),
-                          ),
-                          FaIcon(
-                            FontAwesomeIcons.plusCircle,
-                            color: isDarkMode ? Colors.white : Colors.black,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.03,
-                      ),
-                      child: Align(
-                        child: Text(
-                          data.cityName,
-                          style: GoogleFonts.questrial(
-                            color: isDarkMode ? Colors.white : Colors.black,
-                            fontSize: size.height * 0.06,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.005,
-                      ),
-                      child: Align(
-                        child: Text(
-                          'Jetzt',
-                          style: GoogleFonts.questrial(
-                            color: isDarkMode ? Colors.white54 : Colors.black54,
-                            fontSize: size.height * 0.035,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.03,
-                      ),
-                      child: Align(
-                        child: Text(
-                          data.currentTemp.toString() +
-                              '˚C', //curent temperature
-                          style: GoogleFonts.questrial(
-                            color: data.currentTemp <= 0
-                                ? Colors.blue
-                                : data.currentTemp > 0 && data.currentTemp <= 15
-                                    ? Colors.indigo
-                                    : data.currentTemp > 15 &&
-                                            data.currentTemp < 30
-                                        ? Colors.deepPurple
-                                        : Colors.pink,
-                            fontSize: size.height * 0.13,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.25),
-                      child: Divider(
-                        color: isDarkMode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.005,
-                      ),
-                      child: Align(
-                        child: Text(
-                          data.condition, // weather
-                          style: GoogleFonts.questrial(
-                            color: isDarkMode ? Colors.white54 : Colors.black54,
-                            fontSize: size.height * 0.03,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.03,
-                        bottom: size.height * 0.01,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            data.minTemp.toString() + ' ˚C', // min temperature
-                            style: GoogleFonts.questrial(
-                              color: data.minTemp <= 0
-                                  ? Colors.blue
-                                  : data.minTemp > 0 && data.minTemp <= 15
-                                      ? Colors.indigo
-                                      : data.minTemp > 15 && data.minTemp < 30
-                                          ? Colors.deepPurple
-                                          : Colors.pink,
-                              fontSize: size.height * 0.03,
-                            ),
-                          ),
-                          Text(
-                            '/',
-                            style: GoogleFonts.questrial(
-                              color:
-                                  isDarkMode ? Colors.white54 : Colors.black54,
-                              fontSize: size.height * 0.03,
-                            ),
-                          ),
-                          Text(
-                            data.maxTemp.toString() + ' ˚C', //max temperature
-                            style: GoogleFonts.questrial(
-                              color: data.maxTemp <= 0
-                                  ? Colors.blue
-                                  : data.maxTemp > 0 && data.maxTemp <= 15
-                                      ? Colors.indigo
-                                      : data.maxTemp > 15 && data.maxTemp < 30
-                                          ? Colors.deepPurple
-                                          : Colors.pink,
-                              fontSize: size.height * 0.03,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: size.width * 0.05,
-                        ),
-                        child: Container(
-                            decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: isDarkMode
-                              ? Colors.white.withOpacity(0.05)
-                              : Colors.black.withOpacity(0.05),
-                        )))
-                  ]))
-            ]))));
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(
+          top: size.height * 0.005,
+        ),
+        child: Align(
+          child: Text(
+            'Jetzt',
+            style: GoogleFonts.questrial(
+              color: isDarkMode ? Colors.white54 : Colors.black54,
+              fontSize: size.height * 0.035,
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(
+          top: size.height * 0.03,
+        ),
+        child: Align(
+          child: Text(
+            data.currentTemp.toString() + '˚C', //curent temperature
+            style: GoogleFonts.questrial(
+              color: data.currentTemp <= 0
+                  ? Colors.blue
+                  : data.currentTemp > 0 && data.currentTemp <= 15
+                      ? Colors.indigo
+                      : data.currentTemp > 15 && data.currentTemp < 30
+                          ? Colors.deepPurple
+                          : Colors.pink,
+              fontSize: size.height * 0.13,
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.25),
+        child: Divider(
+          color: isDarkMode ? Colors.white : Colors.black,
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(
+          top: size.height * 0.005,
+        ),
+        child: Align(
+          child: Text(
+            data.condition, // weather
+            style: GoogleFonts.questrial(
+              color: isDarkMode ? Colors.white54 : Colors.black54,
+              fontSize: size.height * 0.03,
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(
+          top: size.height * 0.03,
+          bottom: size.height * 0.01,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              data.minTemp.toString() + ' ˚C', // min temperature
+              style: GoogleFonts.questrial(
+                color: data.minTemp <= 0
+                    ? Colors.blue
+                    : data.minTemp > 0 && data.minTemp <= 15
+                        ? Colors.indigo
+                        : data.minTemp > 15 && data.minTemp < 30
+                            ? Colors.deepPurple
+                            : Colors.pink,
+                fontSize: size.height * 0.03,
+              ),
+            ),
+            Text(
+              '/',
+              style: GoogleFonts.questrial(
+                color: isDarkMode ? Colors.white54 : Colors.black54,
+                fontSize: size.height * 0.03,
+              ),
+            ),
+            Text(
+              data.maxTemp.toString() + ' ˚C', //max temperature
+              style: GoogleFonts.questrial(
+                color: data.maxTemp <= 0
+                    ? Colors.blue
+                    : data.maxTemp > 0 && data.maxTemp <= 15
+                        ? Colors.indigo
+                        : data.maxTemp > 15 && data.maxTemp < 30
+                            ? Colors.deepPurple
+                            : Colors.pink,
+                fontSize: size.height * 0.03,
+              ),
+            ),
+          ],
+        ),
+      ),
+      Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.05,
+          ),
+          child: Container(
+              decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
+            color: isDarkMode
+                ? Colors.white.withOpacity(0.05)
+                : Colors.black.withOpacity(0.05),
+          )))
+    ]);
   }
 }

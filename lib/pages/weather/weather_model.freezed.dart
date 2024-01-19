@@ -25,8 +25,10 @@ mixin _$WeatherModel {
   double get minTemp => throw _privateConstructorUsedError;
   double get maxTemp => throw _privateConstructorUsedError;
   String get condition => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
-  bool get hasError => throw _privateConstructorUsedError;
+  String get time => throw _privateConstructorUsedError;
+  String get iconCode => throw _privateConstructorUsedError;
+  double get wind => throw _privateConstructorUsedError;
+  double get rainprobability => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,8 +48,10 @@ abstract class $WeatherModelCopyWith<$Res> {
       double minTemp,
       double maxTemp,
       String condition,
-      bool isLoading,
-      bool hasError});
+      String time,
+      String iconCode,
+      double wind,
+      double rainprobability});
 }
 
 /// @nodoc
@@ -68,8 +72,10 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
     Object? minTemp = null,
     Object? maxTemp = null,
     Object? condition = null,
-    Object? isLoading = null,
-    Object? hasError = null,
+    Object? time = null,
+    Object? iconCode = null,
+    Object? wind = null,
+    Object? rainprobability = null,
   }) {
     return _then(_value.copyWith(
       cityName: null == cityName
@@ -92,14 +98,22 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as String,
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasError: null == hasError
-          ? _value.hasError
-          : hasError // ignore: cast_nullable_to_non_nullable
-              as bool,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as String,
+      iconCode: null == iconCode
+          ? _value.iconCode
+          : iconCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      wind: null == wind
+          ? _value.wind
+          : wind // ignore: cast_nullable_to_non_nullable
+              as double,
+      rainprobability: null == rainprobability
+          ? _value.rainprobability
+          : rainprobability // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -118,8 +132,10 @@ abstract class _$$WeatherModelImplCopyWith<$Res>
       double minTemp,
       double maxTemp,
       String condition,
-      bool isLoading,
-      bool hasError});
+      String time,
+      String iconCode,
+      double wind,
+      double rainprobability});
 }
 
 /// @nodoc
@@ -138,8 +154,10 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
     Object? minTemp = null,
     Object? maxTemp = null,
     Object? condition = null,
-    Object? isLoading = null,
-    Object? hasError = null,
+    Object? time = null,
+    Object? iconCode = null,
+    Object? wind = null,
+    Object? rainprobability = null,
   }) {
     return _then(_$WeatherModelImpl(
       cityName: null == cityName
@@ -162,14 +180,22 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as String,
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasError: null == hasError
-          ? _value.hasError
-          : hasError // ignore: cast_nullable_to_non_nullable
-              as bool,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as String,
+      iconCode: null == iconCode
+          ? _value.iconCode
+          : iconCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      wind: null == wind
+          ? _value.wind
+          : wind // ignore: cast_nullable_to_non_nullable
+              as double,
+      rainprobability: null == rainprobability
+          ? _value.rainprobability
+          : rainprobability // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -180,11 +206,13 @@ class _$WeatherModelImpl implements _WeatherModel {
   _$WeatherModelImpl(
       {required this.cityName,
       required this.currentTemp,
-      required this.minTemp,
-      required this.maxTemp,
+      this.minTemp = 0,
+      this.maxTemp = 0,
       required this.condition,
-      required this.isLoading,
-      required this.hasError});
+      this.time = '',
+      this.iconCode = '',
+      this.wind = 0,
+      this.rainprobability = 0});
 
   factory _$WeatherModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherModelImplFromJson(json);
@@ -194,19 +222,29 @@ class _$WeatherModelImpl implements _WeatherModel {
   @override
   final double currentTemp;
   @override
+  @JsonKey()
   final double minTemp;
   @override
+  @JsonKey()
   final double maxTemp;
   @override
   final String condition;
   @override
-  final bool isLoading;
+  @JsonKey()
+  final String time;
   @override
-  final bool hasError;
+  @JsonKey()
+  final String iconCode;
+  @override
+  @JsonKey()
+  final double wind;
+  @override
+  @JsonKey()
+  final double rainprobability;
 
   @override
   String toString() {
-    return 'WeatherModel(cityName: $cityName, currentTemp: $currentTemp, minTemp: $minTemp, maxTemp: $maxTemp, condition: $condition, isLoading: $isLoading, hasError: $hasError)';
+    return 'WeatherModel(cityName: $cityName, currentTemp: $currentTemp, minTemp: $minTemp, maxTemp: $maxTemp, condition: $condition, time: $time, iconCode: $iconCode, wind: $wind, rainprobability: $rainprobability)';
   }
 
   @override
@@ -222,16 +260,18 @@ class _$WeatherModelImpl implements _WeatherModel {
             (identical(other.maxTemp, maxTemp) || other.maxTemp == maxTemp) &&
             (identical(other.condition, condition) ||
                 other.condition == condition) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.hasError, hasError) ||
-                other.hasError == hasError));
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.iconCode, iconCode) ||
+                other.iconCode == iconCode) &&
+            (identical(other.wind, wind) || other.wind == wind) &&
+            (identical(other.rainprobability, rainprobability) ||
+                other.rainprobability == rainprobability));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, cityName, currentTemp, minTemp,
-      maxTemp, condition, isLoading, hasError);
+      maxTemp, condition, time, iconCode, wind, rainprobability);
 
   @JsonKey(ignore: true)
   @override
@@ -251,11 +291,13 @@ abstract class _WeatherModel implements WeatherModel {
   factory _WeatherModel(
       {required final String cityName,
       required final double currentTemp,
-      required final double minTemp,
-      required final double maxTemp,
+      final double minTemp,
+      final double maxTemp,
       required final String condition,
-      required final bool isLoading,
-      required final bool hasError}) = _$WeatherModelImpl;
+      final String time,
+      final String iconCode,
+      final double wind,
+      final double rainprobability}) = _$WeatherModelImpl;
 
   factory _WeatherModel.fromJson(Map<String, dynamic> json) =
       _$WeatherModelImpl.fromJson;
@@ -271,9 +313,13 @@ abstract class _WeatherModel implements WeatherModel {
   @override
   String get condition;
   @override
-  bool get isLoading;
+  String get time;
   @override
-  bool get hasError;
+  String get iconCode;
+  @override
+  double get wind;
+  @override
+  double get rainprobability;
   @override
   @JsonKey(ignore: true)
   _$$WeatherModelImplCopyWith<_$WeatherModelImpl> get copyWith =>

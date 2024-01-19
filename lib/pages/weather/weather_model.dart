@@ -8,11 +8,13 @@ abstract class WeatherModel with _$WeatherModel {
   factory WeatherModel({
     required String cityName,
     required double currentTemp,
-    required double minTemp,
-    required double maxTemp,
+    @Default(0) double minTemp,
+    @Default(0) double maxTemp,
     required String condition,
-    required bool isLoading,
-    required bool hasError,
+    @Default('') String time,
+    @Default('') String iconCode,
+    @Default(0) double wind,
+    @Default(0) double rainprobability,
   }) = _WeatherModel;
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) =>
