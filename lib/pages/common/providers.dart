@@ -1,4 +1,4 @@
-import 'package:flutter_weatherapp/services/openweathermap_service.dart';
+import 'package:flutter_weatherapp/services/api_service.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/weather_controller.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
