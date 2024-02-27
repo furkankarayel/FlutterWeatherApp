@@ -4,11 +4,8 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_weatherapp/pages/common/providers.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_controller.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_home_model.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_model.dart';
-import 'package:flutter_weatherapp/pages/weather/weather_home_model.dart';
-import 'package:flutter_weatherapp/pages/weather/weather_model.dart';
+import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 
 class LocationSearchView extends ConsumerWidget {
   LocationSearchView({Key? key, required this.current}) : super(key: key);
@@ -22,14 +19,6 @@ class LocationSearchView extends ConsumerWidget {
         ref.read(providers.locationSearchControllerProvider.notifier);
     final LocationSearchHomeModel model =
         ref.watch(providers.locationSearchControllerProvider);
-
-    void debounceRestCall(String input) {
-      EasyDebounce.debounce(
-          'debouncer', // <-- An ID for this particular debouncer
-          Duration(milliseconds: 500), // <-- The debounce duration
-          () => controller.fetchLocations(input) // <-- The target method
-          );
-    }
 
     void onLocationSelected(String location) {
       // Assuming 'location' is the selected location from search
@@ -65,21 +54,21 @@ class LocationSearchView extends ConsumerWidget {
                           border: const OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 0, style: BorderStyle.none))),
-                      onChanged: debounceRestCall),
+                      onChanged: controller.fetchLocations),
                 ),
                 model.isLoading
-                    ? CircularProgressIndicator()
+                    ? const CircularProgressIndicator()
                     : DataTable(
                         columns: [
-                          DataColumn(
+                          const DataColumn(
                             label: Text("Stadt"),
                             numeric: false,
                           ),
-                          DataColumn(
+                          const DataColumn(
                             label: Text("Logitude"),
                             numeric: false,
                           ),
-                          DataColumn(
+                          const DataColumn(
                             label: Text("Latitude"),
                             numeric: false,
                           ),

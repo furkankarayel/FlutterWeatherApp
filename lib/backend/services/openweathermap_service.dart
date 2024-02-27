@@ -1,5 +1,5 @@
 import 'package:flutter_weatherapp/backend/services/backend.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_model.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -7,7 +7,7 @@ final String apiKey = 'bd427cb6ae765d0bd2ba7d9ea82e63fa';
 final String weatherBaseUrl = 'https://api.openweathermap.org/data/3.0';
 final String geocodingBaseUrl = 'http://api.openweathermap.org/geo/1.0';
 
-class OpenWeatherMapApiImpl extends BackendService {
+class ClientpApiImpl extends BackendService {
   @override
   Future<Map<String, dynamic>> fetchWeatherData(String lat, String lon) async {
     final response = await http.get(Uri.parse(

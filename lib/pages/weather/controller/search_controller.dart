@@ -1,10 +1,6 @@
 import 'package:flutter_weatherapp/backend/services/backend.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_home_model.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_model.dart';
-
+import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 import 'package:riverpod/riverpod.dart';
-
-import 'package:intl/intl.dart';
 
 abstract class LocationSearchController
     extends StateNotifier<LocationSearchHomeModel> {

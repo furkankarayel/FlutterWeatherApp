@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weatherapp/pages/common/providers.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_model.dart';
-import 'package:flutter_weatherapp/pages/location/location_search_view.dart';
+import 'package:flutter_weatherapp/pages/weather/view/search_view.dart';
 import 'package:flutter_weatherapp/pages/ui-kit/weather_current.dart';
 import 'package:flutter_weatherapp/pages/ui-kit/weather_forecast_today.dart';
-import 'package:flutter_weatherapp/pages/weather/weather_home_model.dart';
-import 'package:flutter_weatherapp/pages/weather/weather_model.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_weatherapp/pages/weather/weather_controller.dart';
+import 'package:flutter_weatherapp/pages/weather/controller/weather_controller.dart';
 
 class WeatherApp extends ConsumerWidget {
   WeatherApp({Key? key}) : super(key: key);
@@ -17,8 +15,7 @@ class WeatherApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final WeatherController controller =
-        ref.read(providers.weatherControllerProvider.notifier);
+    ref.read(providers.weatherControllerProvider.notifier);
 
     final WeatherHomeModel model =
         ref.watch(providers.weatherControllerProvider);
@@ -29,7 +26,7 @@ class WeatherApp extends ConsumerWidget {
     return Scaffold(
         body: Center(
             child: model.isLoading
-                ? CircularProgressIndicator()
+                ? const CircularProgressIndicator()
                 : Container(
                     height: size.height,
                     width: size.height,
@@ -70,7 +67,7 @@ class WeatherApp extends ConsumerWidget {
                                   ),
                                   IconButton(
                                     icon: FaIcon(
-                                      FontAwesomeIcons.search,
+                                      FontAwesomeIcons.magnifyingGlass,
                                       color: isDarkMode
                                           ? Colors.white
                                           : Colors.black,
@@ -134,7 +131,7 @@ class WeatherApp extends ConsumerWidget {
                                           child: Row(
                                             children: [
                                               model.isLoading
-                                                  ? CircularProgressIndicator()
+                                                  ? const CircularProgressIndicator()
                                                   : WeatherForecastToday(
                                                       data: model.forecasts[0],
                                                       isDarkMode: isDarkMode,
