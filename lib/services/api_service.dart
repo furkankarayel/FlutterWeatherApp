@@ -7,7 +7,7 @@ final String apiKey = 'bd427cb6ae765d0bd2ba7d9ea82e63fa';
 final String weatherBaseUrl = 'https://api.openweathermap.org/data/3.0';
 final String geocodingBaseUrl = 'http://api.openweathermap.org/geo/1.0';
 
-class ClientpApiImpl extends BackendService {
+class ApiClientImpl extends BackendService {
   @override
   Future<Map<String, dynamic>> fetchWeatherData(String lat, String lon) async {
     final response = await http.get(Uri.parse(

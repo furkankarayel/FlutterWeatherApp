@@ -11,11 +11,11 @@ class Providers {
       weatherControllerProvider =
       StateNotifierProvider<WeatherController, WeatherHomeModel>(
           (StateNotifierProviderRef ref) =>
-              WeatherControllerImpl(backendService: ClientpApiImpl()));
+              WeatherControllerImpl(backendService: ApiClientImpl()));
 
   final StateNotifierProvider<LocationSearchController, LocationSearchHomeModel>
       locationSearchControllerProvider =
       StateNotifierProvider<LocationSearchController, LocationSearchHomeModel>(
           (StateNotifierProviderRef ref) =>
-              LocationSearchControllerImpl(backendService: ClientpApiImpl()));
+              LocationSearchControllerImpl(backendService: ApiClientImpl()));
 }
