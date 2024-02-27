@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WeatherCurrent extends StatelessWidget {
@@ -53,7 +51,7 @@ class WeatherCurrent extends StatelessWidget {
         ),
         child: Align(
           child: Text(
-            data.currentTemp.toString() + '˚C', //curent temperature
+            '${data.currentTemp}˚C', //curent temperature
             style: GoogleFonts.questrial(
               color: data.currentTemp <= 0
                   ? Colors.blue
@@ -96,7 +94,7 @@ class WeatherCurrent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              data.minTemp.toString() + ' ˚C', // min temperature
+              '${data.minTemp} ˚C', // min temperature
               style: GoogleFonts.questrial(
                 color: data.minTemp <= 0
                     ? Colors.blue
@@ -116,7 +114,7 @@ class WeatherCurrent extends StatelessWidget {
               ),
             ),
             Text(
-              data.maxTemp.toString() + ' ˚C', //max temperature
+              '${data.maxTemp} ˚C', //max temperature
               style: GoogleFonts.questrial(
                 color: data.maxTemp <= 0
                     ? Colors.blue

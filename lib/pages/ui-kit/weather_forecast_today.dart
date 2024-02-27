@@ -16,8 +16,6 @@ class WeatherForecastToday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String iconCode = data.iconCode;
-
     return Padding(
       padding: EdgeInsets.all(size.width * 0.025),
       child: Column(

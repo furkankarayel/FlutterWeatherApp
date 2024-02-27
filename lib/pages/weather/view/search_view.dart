@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_weatherapp/pages/common/providers.dart';
@@ -59,16 +56,16 @@ class LocationSearchView extends ConsumerWidget {
                 model.isLoading
                     ? const CircularProgressIndicator()
                     : DataTable(
-                        columns: [
-                          const DataColumn(
+                        columns: const [
+                          DataColumn(
                             label: Text("Stadt"),
                             numeric: false,
                           ),
-                          const DataColumn(
+                          DataColumn(
                             label: Text("Logitude"),
                             numeric: false,
                           ),
-                          const DataColumn(
+                          DataColumn(
                             label: Text("Latitude"),
                             numeric: false,
                           ),
