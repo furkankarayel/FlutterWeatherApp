@@ -2,6 +2,8 @@ import 'package:flutter_weatherapp/services/backend.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 import 'package:riverpod/riverpod.dart';
 
+import 'package:intl/intl.dart';
+
 abstract class LocationSearchController
     extends StateNotifier<LocationSearchHomeModel> {
   LocationSearchController(LocationSearchHomeModel state) : super(state);

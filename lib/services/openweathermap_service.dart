@@ -1,4 +1,4 @@
-import 'package:flutter_weatherapp/backend/services/backend.dart';
+import 'package:flutter_weatherapp/services/backend.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
