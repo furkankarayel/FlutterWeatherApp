@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_weatherapp/pages/common/providers.dart';
+import 'package:flutter_weatherapp/common/providers.dart';
 import 'package:flutter_weatherapp/pages/weather/view/search_view.dart';
-import 'package:flutter_weatherapp/pages/ui-kit/weather_current.dart';
-import 'package:flutter_weatherapp/pages/ui-kit/weather_forecast_today.dart';
+import 'package:flutter_weatherapp/ui-kit/weather_current.dart';
+import 'package:flutter_weatherapp/ui-kit/weather_forecast_today.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
