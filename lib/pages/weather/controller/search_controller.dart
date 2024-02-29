@@ -1,17 +1,17 @@
+import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/services/backend.dart';
-import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 import 'package:riverpod/riverpod.dart';
 
 abstract class LocationSearchController
     extends StateNotifier<LocationSearchHomeModel> {
   LocationSearchController(LocationSearchHomeModel state) : super(state);
-  void fetchLocations(String location);
+  void fetchs(String location);
 }
 
-class LocationSearchControllerImpl extends LocationSearchController {
+class SearchControllerImpl extends LocationSearchController {
   final BackendService _backendService;
 
-  LocationSearchControllerImpl({
+  SearchControllerImpl({
     required BackendService backendService,
     LocationSearchModel? model,
   })  : _backendService = backendService,
@@ -19,7 +19,7 @@ class LocationSearchControllerImpl extends LocationSearchController {
             currentDataTable: List.empty(), isLoading: false, hasError: false));
 
   @override
-  Future<void> fetchLocations(String location) async {
+  Future<void> fetchs(String location) async {
     final response = await _backendService.fetchGeoLocation(location);
     List<LocationSearchModel> list = [];
 

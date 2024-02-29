@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'search_model.dart';
+part of 'location_search_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,40 +14,43 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SearchHomeModel _$SearchHomeModelFromJson(Map<String, dynamic> json) {
-  return _SearchHomeModel.fromJson(json);
+LocationSearchHomeModel _$LocationSearchHomeModelFromJson(
+    Map<String, dynamic> json) {
+  return _LocationSearchHomeModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SearchHomeModel {
-  List<SearchModel> get currentDataTable => throw _privateConstructorUsedError;
+mixin _$LocationSearchHomeModel {
+  List<LocationSearchModel> get currentDataTable =>
+      throw _privateConstructorUsedError;
   String get searchTerm => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SearchHomeModelCopyWith<SearchHomeModel> get copyWith =>
+  $LocationSearchHomeModelCopyWith<LocationSearchHomeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SearchHomeModelCopyWith<$Res> {
-  factory $SearchHomeModelCopyWith(
-          SearchHomeModel value, $Res Function(SearchHomeModel) then) =
-      _$SearchHomeModelCopyWithImpl<$Res, SearchHomeModel>;
+abstract class $LocationSearchHomeModelCopyWith<$Res> {
+  factory $LocationSearchHomeModelCopyWith(LocationSearchHomeModel value,
+          $Res Function(LocationSearchHomeModel) then) =
+      _$LocationSearchHomeModelCopyWithImpl<$Res, LocationSearchHomeModel>;
   @useResult
   $Res call(
-      {List<SearchModel> currentDataTable,
+      {List<LocationSearchModel> currentDataTable,
       String searchTerm,
       bool isLoading,
       bool hasError});
 }
 
 /// @nodoc
-class _$SearchHomeModelCopyWithImpl<$Res, $Val extends SearchHomeModel>
-    implements $SearchHomeModelCopyWith<$Res> {
-  _$SearchHomeModelCopyWithImpl(this._value, this._then);
+class _$LocationSearchHomeModelCopyWithImpl<$Res,
+        $Val extends LocationSearchHomeModel>
+    implements $LocationSearchHomeModelCopyWith<$Res> {
+  _$LocationSearchHomeModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -66,7 +69,7 @@ class _$SearchHomeModelCopyWithImpl<$Res, $Val extends SearchHomeModel>
       currentDataTable: null == currentDataTable
           ? _value.currentDataTable
           : currentDataTable // ignore: cast_nullable_to_non_nullable
-              as List<SearchModel>,
+              as List<LocationSearchModel>,
       searchTerm: null == searchTerm
           ? _value.searchTerm
           : searchTerm // ignore: cast_nullable_to_non_nullable
@@ -84,26 +87,29 @@ class _$SearchHomeModelCopyWithImpl<$Res, $Val extends SearchHomeModel>
 }
 
 /// @nodoc
-abstract class _$$SearchHomeModelImplCopyWith<$Res>
-    implements $SearchHomeModelCopyWith<$Res> {
-  factory _$$SearchHomeModelImplCopyWith(_$SearchHomeModelImpl value,
-          $Res Function(_$SearchHomeModelImpl) then) =
-      __$$SearchHomeModelImplCopyWithImpl<$Res>;
+abstract class _$$LocationSearchHomeModelImplCopyWith<$Res>
+    implements $LocationSearchHomeModelCopyWith<$Res> {
+  factory _$$LocationSearchHomeModelImplCopyWith(
+          _$LocationSearchHomeModelImpl value,
+          $Res Function(_$LocationSearchHomeModelImpl) then) =
+      __$$LocationSearchHomeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<SearchModel> currentDataTable,
+      {List<LocationSearchModel> currentDataTable,
       String searchTerm,
       bool isLoading,
       bool hasError});
 }
 
 /// @nodoc
-class __$$SearchHomeModelImplCopyWithImpl<$Res>
-    extends _$SearchHomeModelCopyWithImpl<$Res, _$SearchHomeModelImpl>
-    implements _$$SearchHomeModelImplCopyWith<$Res> {
-  __$$SearchHomeModelImplCopyWithImpl(
-      _$SearchHomeModelImpl _value, $Res Function(_$SearchHomeModelImpl) _then)
+class __$$LocationSearchHomeModelImplCopyWithImpl<$Res>
+    extends _$LocationSearchHomeModelCopyWithImpl<$Res,
+        _$LocationSearchHomeModelImpl>
+    implements _$$LocationSearchHomeModelImplCopyWith<$Res> {
+  __$$LocationSearchHomeModelImplCopyWithImpl(
+      _$LocationSearchHomeModelImpl _value,
+      $Res Function(_$LocationSearchHomeModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,11 +120,11 @@ class __$$SearchHomeModelImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? hasError = null,
   }) {
-    return _then(_$SearchHomeModelImpl(
+    return _then(_$LocationSearchHomeModelImpl(
       currentDataTable: null == currentDataTable
           ? _value._currentDataTable
           : currentDataTable // ignore: cast_nullable_to_non_nullable
-              as List<SearchModel>,
+              as List<LocationSearchModel>,
       searchTerm: null == searchTerm
           ? _value.searchTerm
           : searchTerm // ignore: cast_nullable_to_non_nullable
@@ -137,20 +143,20 @@ class __$$SearchHomeModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchHomeModelImpl implements _SearchHomeModel {
-  _$SearchHomeModelImpl(
-      {required final List<SearchModel> currentDataTable,
+class _$LocationSearchHomeModelImpl implements _LocationSearchHomeModel {
+  _$LocationSearchHomeModelImpl(
+      {required final List<LocationSearchModel> currentDataTable,
       this.searchTerm = '',
       this.isLoading = false,
       this.hasError = false})
       : _currentDataTable = currentDataTable;
 
-  factory _$SearchHomeModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SearchHomeModelImplFromJson(json);
+  factory _$LocationSearchHomeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationSearchHomeModelImplFromJson(json);
 
-  final List<SearchModel> _currentDataTable;
+  final List<LocationSearchModel> _currentDataTable;
   @override
-  List<SearchModel> get currentDataTable {
+  List<LocationSearchModel> get currentDataTable {
     if (_currentDataTable is EqualUnmodifiableListView)
       return _currentDataTable;
     // ignore: implicit_dynamic_type
@@ -169,14 +175,14 @@ class _$SearchHomeModelImpl implements _SearchHomeModel {
 
   @override
   String toString() {
-    return 'SearchHomeModel(currentDataTable: $currentDataTable, searchTerm: $searchTerm, isLoading: $isLoading, hasError: $hasError)';
+    return 'LocationSearchHomeModel(currentDataTable: $currentDataTable, searchTerm: $searchTerm, isLoading: $isLoading, hasError: $hasError)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchHomeModelImpl &&
+            other is _$LocationSearchHomeModelImpl &&
             const DeepCollectionEquality()
                 .equals(other._currentDataTable, _currentDataTable) &&
             (identical(other.searchTerm, searchTerm) ||
@@ -199,30 +205,30 @@ class _$SearchHomeModelImpl implements _SearchHomeModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchHomeModelImplCopyWith<_$SearchHomeModelImpl> get copyWith =>
-      __$$SearchHomeModelImplCopyWithImpl<_$SearchHomeModelImpl>(
-          this, _$identity);
+  _$$LocationSearchHomeModelImplCopyWith<_$LocationSearchHomeModelImpl>
+      get copyWith => __$$LocationSearchHomeModelImplCopyWithImpl<
+          _$LocationSearchHomeModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SearchHomeModelImplToJson(
+    return _$$LocationSearchHomeModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _SearchHomeModel implements SearchHomeModel {
-  factory _SearchHomeModel(
-      {required final List<SearchModel> currentDataTable,
+abstract class _LocationSearchHomeModel implements LocationSearchHomeModel {
+  factory _LocationSearchHomeModel(
+      {required final List<LocationSearchModel> currentDataTable,
       final String searchTerm,
       final bool isLoading,
-      final bool hasError}) = _$SearchHomeModelImpl;
+      final bool hasError}) = _$LocationSearchHomeModelImpl;
 
-  factory _SearchHomeModel.fromJson(Map<String, dynamic> json) =
-      _$SearchHomeModelImpl.fromJson;
+  factory _LocationSearchHomeModel.fromJson(Map<String, dynamic> json) =
+      _$LocationSearchHomeModelImpl.fromJson;
 
   @override
-  List<SearchModel> get currentDataTable;
+  List<LocationSearchModel> get currentDataTable;
   @override
   String get searchTerm;
   @override
@@ -231,39 +237,39 @@ abstract class _SearchHomeModel implements SearchHomeModel {
   bool get hasError;
   @override
   @JsonKey(ignore: true)
-  _$$SearchHomeModelImplCopyWith<_$SearchHomeModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocationSearchHomeModelImplCopyWith<_$LocationSearchHomeModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
-SearchModel _$SearchModelFromJson(Map<String, dynamic> json) {
-  return _SearchModel.fromJson(json);
+LocationSearchModel _$LocationSearchModelFromJson(Map<String, dynamic> json) {
+  return _LocationSearchModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SearchModel {
+mixin _$LocationSearchModel {
   String get cityName => throw _privateConstructorUsedError;
   String get lat => throw _privateConstructorUsedError;
   String get lon => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SearchModelCopyWith<SearchModel> get copyWith =>
+  $LocationSearchModelCopyWith<LocationSearchModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SearchModelCopyWith<$Res> {
-  factory $SearchModelCopyWith(
-          SearchModel value, $Res Function(SearchModel) then) =
-      _$SearchModelCopyWithImpl<$Res, SearchModel>;
+abstract class $LocationSearchModelCopyWith<$Res> {
+  factory $LocationSearchModelCopyWith(
+          LocationSearchModel value, $Res Function(LocationSearchModel) then) =
+      _$LocationSearchModelCopyWithImpl<$Res, LocationSearchModel>;
   @useResult
   $Res call({String cityName, String lat, String lon});
 }
 
 /// @nodoc
-class _$SearchModelCopyWithImpl<$Res, $Val extends SearchModel>
-    implements $SearchModelCopyWith<$Res> {
-  _$SearchModelCopyWithImpl(this._value, this._then);
+class _$LocationSearchModelCopyWithImpl<$Res, $Val extends LocationSearchModel>
+    implements $LocationSearchModelCopyWith<$Res> {
+  _$LocationSearchModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -295,22 +301,22 @@ class _$SearchModelCopyWithImpl<$Res, $Val extends SearchModel>
 }
 
 /// @nodoc
-abstract class _$$SearchModelImplCopyWith<$Res>
-    implements $SearchModelCopyWith<$Res> {
-  factory _$$SearchModelImplCopyWith(
-          _$SearchModelImpl value, $Res Function(_$SearchModelImpl) then) =
-      __$$SearchModelImplCopyWithImpl<$Res>;
+abstract class _$$LocationSearchModelImplCopyWith<$Res>
+    implements $LocationSearchModelCopyWith<$Res> {
+  factory _$$LocationSearchModelImplCopyWith(_$LocationSearchModelImpl value,
+          $Res Function(_$LocationSearchModelImpl) then) =
+      __$$LocationSearchModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String cityName, String lat, String lon});
 }
 
 /// @nodoc
-class __$$SearchModelImplCopyWithImpl<$Res>
-    extends _$SearchModelCopyWithImpl<$Res, _$SearchModelImpl>
-    implements _$$SearchModelImplCopyWith<$Res> {
-  __$$SearchModelImplCopyWithImpl(
-      _$SearchModelImpl _value, $Res Function(_$SearchModelImpl) _then)
+class __$$LocationSearchModelImplCopyWithImpl<$Res>
+    extends _$LocationSearchModelCopyWithImpl<$Res, _$LocationSearchModelImpl>
+    implements _$$LocationSearchModelImplCopyWith<$Res> {
+  __$$LocationSearchModelImplCopyWithImpl(_$LocationSearchModelImpl _value,
+      $Res Function(_$LocationSearchModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -320,7 +326,7 @@ class __$$SearchModelImplCopyWithImpl<$Res>
     Object? lat = null,
     Object? lon = null,
   }) {
-    return _then(_$SearchModelImpl(
+    return _then(_$LocationSearchModelImpl(
       cityName: null == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
@@ -339,12 +345,12 @@ class __$$SearchModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchModelImpl implements _SearchModel {
-  _$SearchModelImpl(
+class _$LocationSearchModelImpl implements _LocationSearchModel {
+  _$LocationSearchModelImpl(
       {required this.cityName, required this.lat, required this.lon});
 
-  factory _$SearchModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SearchModelImplFromJson(json);
+  factory _$LocationSearchModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationSearchModelImplFromJson(json);
 
   @override
   final String cityName;
@@ -355,14 +361,14 @@ class _$SearchModelImpl implements _SearchModel {
 
   @override
   String toString() {
-    return 'SearchModel(cityName: $cityName, lat: $lat, lon: $lon)';
+    return 'LocationSearchModel(cityName: $cityName, lat: $lat, lon: $lon)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchModelImpl &&
+            other is _$LocationSearchModelImpl &&
             (identical(other.cityName, cityName) ||
                 other.cityName == cityName) &&
             (identical(other.lat, lat) || other.lat == lat) &&
@@ -376,25 +382,26 @@ class _$SearchModelImpl implements _SearchModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchModelImplCopyWith<_$SearchModelImpl> get copyWith =>
-      __$$SearchModelImplCopyWithImpl<_$SearchModelImpl>(this, _$identity);
+  _$$LocationSearchModelImplCopyWith<_$LocationSearchModelImpl> get copyWith =>
+      __$$LocationSearchModelImplCopyWithImpl<_$LocationSearchModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SearchModelImplToJson(
+    return _$$LocationSearchModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _SearchModel implements SearchModel {
-  factory _SearchModel(
+abstract class _LocationSearchModel implements LocationSearchModel {
+  factory _LocationSearchModel(
       {required final String cityName,
       required final String lat,
-      required final String lon}) = _$SearchModelImpl;
+      required final String lon}) = _$LocationSearchModelImpl;
 
-  factory _SearchModel.fromJson(Map<String, dynamic> json) =
-      _$SearchModelImpl.fromJson;
+  factory _LocationSearchModel.fromJson(Map<String, dynamic> json) =
+      _$LocationSearchModelImpl.fromJson;
 
   @override
   String get cityName;
@@ -404,6 +411,6 @@ abstract class _SearchModel implements SearchModel {
   String get lon;
   @override
   @JsonKey(ignore: true)
-  _$$SearchModelImplCopyWith<_$SearchModelImpl> get copyWith =>
+  _$$LocationSearchModelImplCopyWith<_$LocationSearchModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

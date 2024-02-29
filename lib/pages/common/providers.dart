@@ -1,3 +1,4 @@
+import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/services/api_service.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/weather_controller.dart';
@@ -14,8 +15,8 @@ class Providers {
               WeatherControllerImpl(backendService: ApiClientImpl()));
 
   final StateNotifierProvider<LocationSearchController, LocationSearchHomeModel>
-      locationSearchControllerProvider =
+      searchControllerProvider =
       StateNotifierProvider<LocationSearchController, LocationSearchHomeModel>(
           (StateNotifierProviderRef ref) =>
-              LocationSearchControllerImpl(backendService: ApiClientImpl()));
+              SearchControllerImpl(backendService: ApiClientImpl()));
 }

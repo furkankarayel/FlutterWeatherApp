@@ -1,5 +1,5 @@
+import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/services/backend.dart';
-import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

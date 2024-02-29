@@ -72,10 +72,9 @@ class WeatherApp extends ConsumerWidget {
                                           : Colors.black,
                                     ),
                                     onPressed: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LocationSearchView(
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) => SearchView(
                                                     current: model
                                                         .currentTemperature,
                                                   )));

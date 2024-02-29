@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_weatherapp/pages/common/providers.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
+import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 
-class LocationSearchView extends ConsumerWidget {
-  LocationSearchView({Key? key, required this.current}) : super(key: key);
+class SearchView extends ConsumerWidget {
+  SearchView({Key? key, required this.current}) : super(key: key);
   TextEditingController textController = TextEditingController();
   final WeatherModel current;
 
@@ -13,11 +14,11 @@ class LocationSearchView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     List<LocationSearchModel> selectedData = [];
     final LocationSearchController controller =
-        ref.read(providers.locationSearchControllerProvider.notifier);
+        ref.read(providers.searchControllerProvider.notifier);
     final LocationSearchHomeModel model =
-        ref.watch(providers.locationSearchControllerProvider);
+        ref.watch(providers.searchControllerProvider);
 
-    void onLocationSelected(String location) {
+    void onSelected(String location) {
       // Assuming 'location' is the selected location from search
       final weatherController =
           ref.read(providers.weatherControllerProvider.notifier);
@@ -35,7 +36,7 @@ class LocationSearchView extends ConsumerWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                const Text("Locations",
+                const Text("s",
                     style:
                         TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
                 SizedBox(
@@ -51,7 +52,7 @@ class LocationSearchView extends ConsumerWidget {
                           border: const OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 0, style: BorderStyle.none))),
-                      onChanged: controller.fetchLocations),
+                      onChanged: controller.fetchs),
                 ),
                 model.isLoading
                     ? const CircularProgressIndicator()
@@ -78,7 +79,7 @@ class LocationSearchView extends ConsumerWidget {
                                     DataCell(
                                       Text(result.cityName),
                                       onTap: () {
-                                        onLocationSelected(result.cityName);
+                                        onSelected(result.cityName);
                                       },
                                     ),
                                     DataCell(
