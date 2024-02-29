@@ -83,7 +83,7 @@ class WeatherControllerImpl extends WeatherController {
 
         var loopModel = WeatherModel(
           cityName: location,
-          currentTemp: 0.0,
+          currentTemp: loop['temp'],
           condition: loop['weather'][0]['description'],
           time: date.toString(),
           iconCode: iconLink,
