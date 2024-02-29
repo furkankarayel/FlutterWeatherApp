@@ -53,7 +53,7 @@ class SearchView extends ConsumerWidget {
                           border: const OutlineInputBorder(
                               borderSide: BorderSide(
                                   width: 0, style: BorderStyle.none))),
-                      onChanged: controller.fetchs),
+                      onChanged: controller.fetchLocations),
                 ),
                 model.isLoading
                     ? const CircularProgressIndicator()

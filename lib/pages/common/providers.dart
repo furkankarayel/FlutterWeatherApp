@@ -18,5 +18,5 @@ class Providers {
       searchControllerProvider =
       StateNotifierProvider<LocationSearchController, LocationSearchHomeModel>(
           (StateNotifierProviderRef ref) =>
-              SearchControllerImpl(backendService: ApiClientImpl()));
+              LocationSearchControllerImpl(backendService: ApiClientImpl()));
 }

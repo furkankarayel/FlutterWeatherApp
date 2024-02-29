@@ -8,10 +8,10 @@ abstract class LocationSearchController
   void fetchLocations(String location);
 }
 
-class SearchControllerImpl extends LocationSearchController {
+class LocationSearchControllerImpl extends LocationSearchController {
   final BackendService _backendService;
 
-  SearchControllerImpl({
+  LocationSearchControllerImpl({
     required BackendService backendService,
     LocationSearchModel? model,
   })  : _backendService = backendService,
