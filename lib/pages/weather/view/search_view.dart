@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_weatherapp/pages/common/providers.dart';
 import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
-import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 
 class LocationSearchView extends ConsumerWidget {
   LocationSearchView({Key? key, required this.current}) : super(key: key);

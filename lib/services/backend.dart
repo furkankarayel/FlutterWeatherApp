@@ -1,4 +1,4 @@
-import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 
 abstract class BackendService {
   Future<Map<String, dynamic>> fetchWeatherData(String lat, String lon);

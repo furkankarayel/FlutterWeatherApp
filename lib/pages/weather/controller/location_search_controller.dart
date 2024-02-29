@@ -1,5 +1,5 @@
 import 'package:flutter_weatherapp/services/backend.dart';
-import 'package:flutter_weatherapp/pages/weather/model/weather_dto.dart';
+import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 import 'package:riverpod/riverpod.dart';
 
 abstract class LocationSearchController
