@@ -5,7 +5,7 @@ import 'package:riverpod/riverpod.dart';
 abstract class LocationSearchController
     extends StateNotifier<LocationSearchHomeModel> {
   LocationSearchController(LocationSearchHomeModel state) : super(state);
-  void fetchs(String location);
+  void fetchLocations(String location);
 }
 
 class SearchControllerImpl extends LocationSearchController {
@@ -19,7 +19,7 @@ class SearchControllerImpl extends LocationSearchController {
             currentDataTable: List.empty(), isLoading: false, hasError: false));
 
   @override
-  Future<void> fetchs(String location) async {
+  Future<void> fetchLocations(String location) async {
     final response = await _backendService.fetchGeoLocation(location);
     List<LocationSearchModel> list = [];
 
