@@ -20,7 +20,6 @@ class SearchView extends ConsumerWidget {
         ref.watch(providers.searchControllerProvider);
 
     void onSelected(String location) {
-      // Assuming 'location' is the selected location from search
       final weatherController =
           ref.read(providers.weatherControllerProvider.notifier);
       weatherController.fetchWeatherData(location);
