@@ -5,6 +5,7 @@ import 'package:flutter_weatherapp/pages/weather/controller/search_controller.da
 import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 
+// ignore: must_be_immutable
 class SearchView extends ConsumerWidget {
   SearchView({Key? key, required this.current}) : super(key: key);
   TextEditingController textController = TextEditingController();

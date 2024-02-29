@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class WeatherApp extends ConsumerWidget {
   WeatherApp({Key? key}) : super(key: key);
   TextEditingController locationController = TextEditingController();
