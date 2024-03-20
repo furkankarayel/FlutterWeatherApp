@@ -15,8 +15,6 @@ class WeatherApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.read(providers.weatherControllerProvider.notifier);
-
     final WeatherHomeModel model =
         ref.watch(providers.weatherControllerProvider);
 
