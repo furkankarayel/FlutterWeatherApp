@@ -36,9 +36,9 @@ class SearchView extends ConsumerWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                const Text("s",
+                const Text("Wetter Location Search",
                     style:
-                        TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                 SizedBox(
                   height: 50,
                   child: TextField(
