@@ -36,7 +36,7 @@ class SearchView extends ConsumerWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                const Text("s",
+                const Text("Suche",
                     style:
                         TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
                 SizedBox(

@@ -23,7 +23,7 @@ class LocationSearchControllerImpl extends LocationSearchController {
     final response = await _backendService.fetchGeoLocation(location);
     List<LocationSearchModel> list = [];
 
-    for (var i = 0; i < response.length; i++) {
+    for (var i = 0; i < 1; i++) {
       var tempModel = LocationSearchModel(
           cityName: response['name'],
           lat: response['lat'].toString(),
