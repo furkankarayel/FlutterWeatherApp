@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_weatherapp/common/providers.dart';
-import 'package:flutter_weatherapp/pages/weather/controller/search_controller.dart';
+import 'package:flutter_weatherapp/pages/weather/model/controller/search_controller.dart';
 import 'package:flutter_weatherapp/pages/weather/model/location_search_model.dart';
 import 'package:flutter_weatherapp/pages/weather/model/weather_model.dart';
 
@@ -36,9 +36,13 @@ class SearchView extends ConsumerWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+<<<<<<< HEAD
                 const Text("Suche",
+=======
+                const Text("Wetter Location Search",
+>>>>>>> c324a3253201ce292a9b721650c1d03cf6206282
                     style:
-                        TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                 SizedBox(
                   height: 50,
                   child: TextField(

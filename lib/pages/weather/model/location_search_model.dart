@@ -7,7 +7,6 @@ part 'location_search_model.g.dart';
 abstract class LocationSearchHomeModel with _$LocationSearchHomeModel {
   factory LocationSearchHomeModel({
     required List<LocationSearchModel> currentDataTable,
-    @Default('') String searchTerm,
     @Default(false) bool isLoading,
     @Default(false) bool hasError,
   }) = _LocationSearchHomeModel;
