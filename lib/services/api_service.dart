@@ -3,7 +3,7 @@ import 'package:flutter_weatherapp/services/backend.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-final String apiKey = 'bd427cb6ae765d0bd2ba7d9ea82e63fa';
+final String apiKey = 'bd427cb6ae765d0bd2ba7d9ea82e63';
 final String weatherBaseUrl = 'https://api.openweathermap.org/data/3.0';
 final String geocodingBaseUrl = 'http://api.openweathermap.org/geo/1.0';
 
